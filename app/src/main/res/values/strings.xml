@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Cubikate</string>
+
+    <string name="lbl_TituloAltaUsuario">Alta de Usuarios</string>
+    <string name="lbl_TituloAltaMaestros">Alta de Maestros</string>
+
+    <string name="txt_Usuario">Usuario</string>
+    <string name="txt_Contrasenia">Contraseña</string>
+
+    <string name="txt_RUT">RUT</string>
+    <string name="txt_Nombre">Nombre</string>
+    <string name="txt_Apellido">Apellidos</string>
+    <string name="txt_Direccion">Dirección</string>
+    <string name="txt_Telefono">Teléfono</string>
+    <string name="txt_Email">Correo Electrónico</string>
+
+    <string name="btn_Aceptar">Guardar</string>
+    <string name="btn_Cancelar">Cancelar</string>
+
+    <string name="Chk_Gasfiter">Gasfiter</string>
+    <string name="chk_Electricista">Electricista</string>
+
+
 </resources>
