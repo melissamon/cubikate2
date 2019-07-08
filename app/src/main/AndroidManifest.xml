@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".frmBuscarMaestro"></activity>
+        <activity android:name=".frmBuscarMaestro" />
         <activity android:name=".frm_alta_maestros" />
         <activity android:name=".frmAltaUsuario" />
         <activity android:name=".MainActivity">

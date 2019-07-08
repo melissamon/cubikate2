@@ -130,6 +130,7 @@
         android:layout_marginStart="57dp"
         android:layout_marginLeft="57dp"
         android:layout_marginTop="22dp"
+        android:onClick="btnAceptar2_click"
         android:text="@string/btn_Aceptar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ChkGasfiter" />
