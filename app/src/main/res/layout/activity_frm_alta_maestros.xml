@@ -6,18 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".frm_alta_maestros">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="413dp"
+        android:layout_height="79dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/maestro" />
+
     <TextView
         android:id="@+id/lblTituloAltaUsuario2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/lbl_TituloAltaMaestros"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/txtUsuario2"
@@ -29,8 +39,9 @@
         android:ems="10"
         android:hint="@string/txt_Usuario"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTituloAltaUsuario2" />
 
     <EditText
         android:id="@+id/txtContrasenia2"
@@ -38,10 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_Contrasenia"
         android:inputType="textPassword"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtUsuario2" />
 
@@ -51,10 +62,10 @@
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_RUT"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtContrasenia2" />
 
@@ -64,10 +75,10 @@
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_Nombre"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRUT2" />
 
@@ -77,10 +88,10 @@
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_Apellido"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombre2" />
 
@@ -90,25 +101,12 @@
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_Direccion"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtApellido2" />
-
-    <EditText
-        android:id="@+id/txtTelefono2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/txt_Telefono"
-        android:inputType="phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail2" />
 
     <EditText
         android:id="@+id/txtEmail2"
@@ -116,45 +114,25 @@
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_Email"
         android:inputType="textEmailAddress"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDireccion2" />
 
-    <Button
-        android:id="@+id/btnAceptar2"
-        android:layout_width="98dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginLeft="57dp"
-        android:layout_marginTop="22dp"
-        android:onClick="btnAceptar2_click"
-        android:text="@string/btn_Aceptar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ChkGasfiter" />
-
-    <Button
-        android:id="@+id/btnCancelar2"
+    <EditText
+        android:id="@+id/txtTelefono2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginTop="22dp"
-        android:text="@string/btn_Cancelar"
-        app:layout_constraintStart_toEndOf="@+id/btnAceptar2"
-        app:layout_constraintTop_toBottomOf="@+id/chkElectricista" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="420dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="@string/txt_Telefono"
+        android:inputType="phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTituloAltaUsuario2"
-        app:srcCompat="@drawable/maestro" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail2" />
 
     <CheckBox
         android:id="@+id/ChkGasfiter"
@@ -162,7 +140,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginLeft="42dp"
-        android:layout_marginTop="8dp"
         android:text="@string/Chk_Gasfiter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono2" />
@@ -173,8 +150,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginLeft="104dp"
-        android:layout_marginTop="8dp"
         android:text="@string/chk_Electricista"
         app:layout_constraintStart_toEndOf="@+id/ChkGasfiter"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono2" />
+
+    <Button
+        android:id="@+id/btnAceptar2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="btnAceptar2_click"
+        android:text="@string/btn_Aceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ChkGasfiter" />
+
+
 </android.support.constraint.ConstraintLayout>
