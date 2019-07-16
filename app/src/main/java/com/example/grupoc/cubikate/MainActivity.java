@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     RequestQueue rq;
     JsonRequest jrq;
 
+    //public static final String nombres = "names";
+
     private EditText etUsuario, etContrasenia;
 
     @Override
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     @Override
     public void onResponse(JSONObject response) {
         User usuario = new User();
-        Toast.makeText(getApplicationContext(),"Se ha encontrado el usuario "+etUsuario.getText().toString(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Se ha encontrado el usuario "+etUsuario.getText().toString(),Toast.LENGTH_SHORT).show();
 
         JSONArray jsonArray = response.optJSONArray("datos");
         JSONObject jsonObject = null;
@@ -78,8 +80,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         try{
             jsonObject = jsonArray.getJSONObject(0);
             usuario.setPwd(jsonObject.optString("user"));
-            usuario.setPwd(jsonObject.getString("owd"));
+            usuario.setPwd(jsonObject.getString("pwd"));
             usuario.setNames(jsonObject.optString("names"));
+
+            Toast.makeText(getApplicationContext(),"¡ Bienvenido "+usuario.getNames()+" !",Toast.LENGTH_SHORT).show();
 
         }catch (JSONException e){
             e.printStackTrace();

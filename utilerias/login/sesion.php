@@ -1,7 +1,7 @@
 <?PHP
 $hostname="localhost:3306";
 $database="id2716259_bd_cubikate";
-$username="root";
+$username="id2716259_root";
 $password="Admin123!";
 $json=array();
 	if(isset($_GET["user"]) && isset($_GET["pwd"])){
@@ -21,8 +21,6 @@ $json=array();
 			mysqli_close($conexion);
 			echo json_encode($json);
 		}
-
-
 
 		else{
 			$results["user"]='';
