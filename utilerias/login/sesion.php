@@ -1,8 +1,8 @@
 <?PHP
-$hostname="localhost";
-$database="bd_prueba";
+$hostname="localhost:3306";
+$database="id2716259_bd_cubikate";
 $username="root";
-$password="Tamy21CA";
+$password="Admin123!";
 $json=array();
 	if(isset($_GET["user"]) && isset($_GET["pwd"])){
 		$user=$_GET['user'];

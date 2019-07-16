@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     }
 
     private void iniciarSesion() {
-        String url = "http://192.168.1.160/login/sesion.php?user="+etUsuario.getText().toString()+"&pwd="+etContrasenia.getText().toString();
+        String url = "https://uniacc.000webhostapp.com/cubikate/sesion.php?user="+etUsuario.getText().toString()+"&pwd="+etContrasenia.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET, url, null,this,this);
         rq.add(jrq);
     }
