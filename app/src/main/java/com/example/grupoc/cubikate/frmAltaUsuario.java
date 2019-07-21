@@ -60,8 +60,8 @@ public class frmAltaUsuario extends AppCompatActivity implements Response.Listen
 
     @Override
     public void onResponse(JSONObject response) {
-       // Toast.makeText(getApplicationContext(), "Se ha registrado el usuario " + etUsuario.getText().toString(), Toast.LENGTH_LONG).show();
-        //limpiarCajas();
+        Toast.makeText(getApplicationContext(), "Se ha registrado el usuario " + etUsuario.getText().toString(), Toast.LENGTH_LONG).show();
+        limpiarCajas();
     }
 
 
@@ -93,7 +93,7 @@ public class frmAltaUsuario extends AppCompatActivity implements Response.Listen
                 "&clave=" + etClave.getText().toString() + "&direccion=" + etDireccion.getText().toString() +
                 "&telefono=" + etTelefono.getText().toString() + "&email=" + etEmail.getText().toString();
 
-        Toast.makeText(getApplicationContext(),url,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),url,Toast.LENGTH_LONG).show();
 
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);
