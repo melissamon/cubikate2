@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
         try{
             jsonObject = jsonArray.getJSONObject(0);
-            usuario.setPwd(jsonObject.optString("user"));
-            usuario.setPwd(jsonObject.getString("pwd"));
+            usuario.setUser(jsonObject.optString("usuario"));
+            usuario.setPwd(jsonObject.getString("clave"));
             usuario.setNames(jsonObject.optString("names"));
 
             Toast.makeText(getApplicationContext(),"¡ Bienvenido "+usuario.getNames()+" !",Toast.LENGTH_SHORT).show();
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     }
 
     private void iniciarSesion() {
-        String url = "https://uniacc.000webhostapp.com/cubikate/sesion.php?user="+etUsuario.getText().toString()+"&pwd="+etContrasenia.getText().toString();
+        String url = "https://uniacc.000webhostapp.com/cubikate/sesion.php?usuario="+etUsuario.getText().toString()+"&clave="+etContrasenia.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET, url, null,this,this);
         rq.add(jrq);
     }
