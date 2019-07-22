@@ -9,19 +9,35 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.Volley;
 
-    private EditText etUsuario;
-    private EditText etContrasenia;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+public class MainActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
+    RequestQueue rq;
+    JsonRequest jrq;
+
+    //public static final String nombres = "names";
+
+    private EditText etUsuario, etContrasenia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        etUsuario = (EditText)findViewById(R.id.txtUsuario);
-//        etContrasenia = (EditText)findViewById(R.id.txtContrasenia);
+        etUsuario = (EditText)findViewById(R.id.txtUsuario);
+        etContrasenia = (EditText)findViewById(R.id.txtContrasenia);
+
+        rq = Volley.newRequestQueue(getApplicationContext());
 
 //        SharedPreferences spInicio = getSharedPreferences("dtCubikate", Context.MODE_PRIVATE);
 //        etUsuario.setText(spInicio.getString("usuario", ""));
@@ -31,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnIngresarIngresar_click(View view){
-
+        iniciarSesion();
     }
 
 
@@ -47,5 +63,38 @@ public class MainActivity extends AppCompatActivity {
         startActivity(btnIngresarMaestro_click);
     }
 
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getApplicationContext(),"No se encontró el usuario "+error.toString(),Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        User usuario = new User();
+        //Toast.makeText(getApplicationContext(),"Se ha encontrado el usuario "+etUsuario.getText().toString(),Toast.LENGTH_SHORT).show();
+
+        JSONArray jsonArray = response.optJSONArray("datos");
+        JSONObject jsonObject = null;
+
+        try{
+            jsonObject = jsonArray.getJSONObject(0);
+            usuario.setUser(jsonObject.optString("usuario"));
+            usuario.setPwd(jsonObject.getString("clave"));
+            usuario.setNames(jsonObject.optString("names"));
+
+            Toast.makeText(getApplicationContext(),"¡ Bienvenido "+usuario.getNames()+" !",Toast.LENGTH_SHORT).show();
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    private void iniciarSesion() {
+        String url = "https://uniacc.000webhostapp.com/cubikate/sesion.php?usuario="+etUsuario.getText().toString()+"&clave="+etContrasenia.getText().toString();
+        jrq = new JsonObjectRequest(Request.Method.GET, url, null,this,this);
+        rq.add(jrq);
+    }
 
 }
