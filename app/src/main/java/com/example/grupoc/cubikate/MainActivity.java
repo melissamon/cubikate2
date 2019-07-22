@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     RequestQueue rq;
     JsonRequest jrq;
 
+    boolean sw = true; //si es true el modulo se comporta como cliente en caso contrario es maestro.
     //public static final String nombres = "names";
 
     private EditText etUsuario, etContrasenia;
@@ -38,18 +39,14 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         etContrasenia = (EditText)findViewById(R.id.txtContrasenia);
 
         rq = Volley.newRequestQueue(getApplicationContext());
-
-//        SharedPreferences spInicio = getSharedPreferences("dtCubikate", Context.MODE_PRIVATE);
-//        etUsuario.setText(spInicio.getString("usuario", ""));
-//        etContrasenia.setText(spInicio.getString("contrasenia", ""));
-
-
     }
 
     public void btnIngresarIngresar_click(View view){
         iniciarSesion();
     }
-
+    public void btnIngresarIngresarMaestro_click(View view){
+        iniciarSesionMaestro();
+    }
 
     //Metodo para el boton clientes btnCliente
     public void btnIngresarCliente_click(View view){
@@ -57,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         startActivity(btnIngresarCliente_click);
     }
 
-    //Metodo para el boton clientes btnAceptar2
+    //Metodo para el boton de maestros btnIngresarMaestro
     public void btnIngresarMaestro_click(View view){
         Intent btnIngresarMaestro_click = new Intent(this, frm_alta_maestros.class);
         startActivity(btnIngresarMaestro_click);
@@ -66,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getApplicationContext(),"No se encontró el usuario "+error.toString(),Toast.LENGTH_LONG).show();
+        if(sw) Toast.makeText(getApplicationContext(),"No se encontró el Usuario " + error.toString(),Toast.LENGTH_LONG).show();
+        else Toast.makeText(getApplicationContext(),"No se encontró el Maestro " + error.toString(),Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -79,22 +77,39 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
         try{
             jsonObject = jsonArray.getJSONObject(0);
-            usuario.setUser(jsonObject.optString("usuario"));
-            usuario.setPwd(jsonObject.getString("clave"));
-            usuario.setNames(jsonObject.optString("names"));
 
-            Toast.makeText(getApplicationContext(),"¡ Bienvenido "+usuario.getNames()+" !",Toast.LENGTH_SHORT).show();
+            if(sw) {
+                usuario.setUser(jsonObject.optString("usuario"));
+                usuario.setPwd(jsonObject.getString("clave"));
+                usuario.setNames(jsonObject.optString("names"));
+
+                Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                usuario.setUser(jsonObject.optString("RUT_maestro"));
+                usuario.setPwd(jsonObject.getString("clave"));
+                usuario.setNames(jsonObject.optString("names"));
+
+                Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
+            }
 
         }catch (JSONException e){
             e.printStackTrace();
         }
-
     }
 
     private void iniciarSesion() {
+        sw = true;
         String url = "https://uniacc.000webhostapp.com/cubikate/sesion.php?usuario="+etUsuario.getText().toString()+"&clave="+etContrasenia.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET, url, null,this,this);
         rq.add(jrq);
     }
 
+    private void iniciarSesionMaestro() {
+        sw = false;
+        String url = "https://uniacc.000webhostapp.com/cubikate/sesion_maestros.php?RUT_maestro="+etUsuario.getText().toString()+"&clave="+etContrasenia.getText().toString();
+        jrq = new JsonObjectRequest(Request.Method.GET, url, null,this,this);
+        rq.add(jrq);
+    }
 }
