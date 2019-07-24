@@ -10,7 +10,7 @@ $json=array();
 		
 		$conexion=mysqli_connect($hostname,$username,$password,$database);
 		
-		$consulta="SELECT RUT_maestro, clave, concat(nombres, ' ', apellidos) as names FROM tabla_Maestros WHERE RUT_maestro= '{$RUT_maestro}' AND clave = '{$clave}'";
+		$consulta="SELECT RUT_maestro, clave, concat(nombres, ' ', apellidos) as names, Activo FROM tabla_Maestros WHERE RUT_maestro= '{$RUT_maestro}' AND clave = '{$clave}'";
         
 		$resultado=mysqli_query($conexion,$consulta);
 
@@ -27,6 +27,7 @@ $json=array();
 			$results["RUT_maestro"]='';
 			$results["clave"]='';
 			$results["names"]='';
+            $results["Activo"]='';
 			$json['datos'][]=$results;
 			echo json_encode($json);
 		}
@@ -36,6 +37,7 @@ $json=array();
 		   	$results["RUT_maestro"]='';
 			$results["clave"]='';
 			$results["names"]='';
+            $results["Activo"]='';
 			$json['datos'][]=$results;
 			echo json_encode($json);
 		}

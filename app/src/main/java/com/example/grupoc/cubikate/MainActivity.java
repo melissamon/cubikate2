@@ -63,13 +63,15 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        if(sw) Toast.makeText(getApplicationContext(),"No se encontró el Usuario " + error.toString(),Toast.LENGTH_LONG).show();
-        else Toast.makeText(getApplicationContext(),"No se encontró el Maestro " + error.toString(),Toast.LENGTH_LONG).show();
+        if(sw) Toast.makeText(getApplicationContext(),"No se encontró el Usuario ",Toast.LENGTH_LONG).show();
+        else Toast.makeText(getApplicationContext(),"No se encontró el Maestro o tiene que REGISTRARSE",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onResponse(JSONObject response) {
         User usuario = new User();
+        String sActivo;
+
         //Toast.makeText(getApplicationContext(),"Se ha encontrado el usuario "+etUsuario.getText().toString(),Toast.LENGTH_SHORT).show();
 
         JSONArray jsonArray = response.optJSONArray("datos");
@@ -90,8 +92,14 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
                 usuario.setUser(jsonObject.optString("RUT_maestro"));
                 usuario.setPwd(jsonObject.getString("clave"));
                 usuario.setNames(jsonObject.optString("names"));
+                usuario.setActivo(jsonObject.optString("Activo"));
 
-                Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
+                sActivo = usuario.getActivo().trim();
+
+                //if (profil.getId().toString().equals(response.trim())){
+
+               if(sActivo.equals("0")) Toast.makeText(getApplicationContext(), "Estimado, tiene que REGISTRARSE como maestro", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
             }
 
         }catch (JSONException e){

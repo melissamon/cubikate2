@@ -84,7 +84,7 @@ public class frm_alta_maestros extends AppCompatActivity implements Response.Lis
                 etNombre2.setText(maestro.getNombres());
                 etApellido2.setText(maestro.getApellidos());
                 etDireccion2.setText(maestro.getDireccion());
-                etEmail2.setText(maestro.getEmail());
+                //etEmail2.setText(maestro.getEmail()); Temporalmente lo desactivo
                 etTelefono2.setText(maestro.getTelefono());
             }
             else
@@ -110,7 +110,7 @@ public class frm_alta_maestros extends AppCompatActivity implements Response.Lis
     //CorreoRegistrarse
     private void CorreoRegistrarse() {
         sw = false;
-        String url = "https://uniacc.000webhostapp.com/cubikate/correo.php?email="+etEmail2.getText().toString();
+        String url = "https://uniacc.000webhostapp.com/cubikate/correo.php?email="+etEmail2.getText().toString()+"&RUT_maestro="+etRUT_maestro.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET, url, null,this,this);
         rq.add(jrq);
     }
