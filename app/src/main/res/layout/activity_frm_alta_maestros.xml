@@ -30,18 +30,35 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/txtUsuario2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txtRUT2"
+        android:layout_width="179dp"
+        android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/txt_Usuario"
-        android:inputType="textPersonName"
         android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="@string/txt_RUT"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTituloAltaUsuario2" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="btnBuscar_click"
+        android:text="@string/btn_Buscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRUT2" />
 
     <EditText
         android:id="@+id/txtContrasenia2"
@@ -49,25 +66,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorPrimary"
         android:ems="10"
         android:hint="@string/txt_Contrasenia"
         android:inputType="textPassword"
-        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsuario2" />
-
-    <EditText
-        android:id="@+id/txtRUT2"
-        android:layout_width="179dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="@string/txt_RUT"
-        android:inputType="textPersonName"
-        android:backgroundTint="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContrasenia2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
     <EditText
         android:id="@+id/txtNombre2"
@@ -75,12 +80,12 @@
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:backgroundTint="@color/colorPrimary"
         android:ems="10"
         android:hint="@string/txt_Nombre"
         android:inputType="textPersonName"
-        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRUT2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtContrasenia2" />
 
     <EditText
         android:id="@+id/txtApellido2"
@@ -155,18 +160,19 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono2" />
 
     <Button
-        android:id="@+id/btnAceptar2"
+        android:id="@+id/btnRegistrarse"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo"
-        android:onClick="btnAceptar2_click"
-        android:text="@string/btn_Aceptar"
+        android:onClick="btnRegistrarse_click"
+        android:text="@string/btn_Registrarse"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ChkGasfiter" />
 

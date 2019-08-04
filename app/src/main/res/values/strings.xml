@@ -16,6 +16,8 @@
 
     <string name="btn_Aceptar">Guardar</string>
     <string name="btn_Cancelar">Cancelar</string>
+    <string name="btn_Registrarse">Registrarse</string>
+    <string name="btn_Buscar">Buscar</string>
 
     <string name="Chk_Gasfiter">Gasfiter</string>
     <string name="chk_Electricista">Electricista</string>
