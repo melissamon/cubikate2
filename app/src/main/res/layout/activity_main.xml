@@ -109,28 +109,28 @@
 
     <Button
         android:id="@+id/btnRegistrarseCliente"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_width="166dp"
+        android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo2"
         android:onClick="btnIngresarCliente_click"
         android:text="Registrarse Cliente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIngresarMaestro" />
 
     <Button
         android:id="@+id/btnRegistrarseMaestro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_width="169dp"
+        android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo2"
@@ -139,6 +139,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarseCliente" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresarMaestro" />
 
 </android.support.constraint.ConstraintLayout>

@@ -22,6 +22,7 @@
     <string name="Chk_Gasfiter">Gasfiter</string>
     <string name="chk_Electricista">Electricista</string>
     <string name="title_activity_frm_prueba">frmPrueba</string>
+    <string name="title_activity_main_user">MainUserActivity</string>
 
 
 </resources>

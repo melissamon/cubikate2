@@ -1,10 +1,8 @@
 package com.example.grupoc.cubikate;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -86,8 +84,15 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
                 usuario.setNames(jsonObject.optString("names"));
 
                 Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
-            }
+                //Ejecutar MainUserActivity
+
+                Intent intent = new Intent(this, MainUserActivity.class);
+                startActivity(intent);
+
+            }//end if
+
             else
+                
             {
                 usuario.setUser(jsonObject.optString("RUT_maestro"));
                 usuario.setPwd(jsonObject.getString("clave"));
