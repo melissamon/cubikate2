@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -25,7 +26,8 @@ public class frm_alta_maestros extends AppCompatActivity implements Response.Lis
 
     boolean sw = true; //Si se pulsa el boton Buscar es True, en caso contrario es falso.
 
-    private EditText etRUT_maestro, etNombre2, etApellido2, etDireccion2, etEmail2, etTelefono2;
+    private EditText etRUT_maestro, etEmail2;
+    private TextView etNombre2, etApellido2, etDireccion2, etTelefono2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,11 @@ public class frm_alta_maestros extends AppCompatActivity implements Response.Lis
         setContentView(R.layout.activity_frm_alta_maestros);
 
         etRUT_maestro = (EditText)findViewById(R.id.txtRUT2);
-        etNombre2 = (EditText)findViewById(R.id.txtNombre2);
-        etApellido2 = (EditText)findViewById(R.id.txtApellido2);
-        etDireccion2 = (EditText)findViewById(R.id.txtDireccion2);
+        etNombre2 = (TextView)findViewById(R.id.txtNombre2);
+        etApellido2 = (TextView)findViewById(R.id.txtApellido2);
+        etDireccion2 = (TextView)findViewById(R.id.txtDireccion2);
         etEmail2 = (EditText)findViewById(R.id.txtEmail2);
-        etTelefono2 = (EditText)findViewById(R.id.txtTelefono2);
+        etTelefono2 = (TextView)findViewById(R.id.txtTelefono2);
 
         rq = Volley.newRequestQueue(getApplicationContext());
     }
@@ -54,6 +56,10 @@ public class frm_alta_maestros extends AppCompatActivity implements Response.Lis
         else {
             //Toast.makeText(getApplicationContext(), "No fue posible enviar el correo " + error.toString(), Toast.LENGTH_LONG).show();
             Toast.makeText(getApplicationContext(), "¡ Revise su correo para continuar !", Toast.LENGTH_SHORT).show();
+
+            Intent iraMain = new Intent(this, MainActivity.class);
+            startActivity(iraMain);
+
         }
     }
 

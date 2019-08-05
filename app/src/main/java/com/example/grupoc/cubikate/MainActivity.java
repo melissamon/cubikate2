@@ -103,9 +103,16 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
                 //if (profil.getId().toString().equals(response.trim())){
 
-               if(sActivo.equals("0")) Toast.makeText(getApplicationContext(), "Estimado, tiene que REGISTRARSE como maestro", Toast.LENGTH_SHORT).show();
-                else Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
-            }
+                if(sActivo.equals("0")) Toast.makeText(getApplicationContext(), "Estimado, tiene que REGISTRARSE como maestro", Toast.LENGTH_SHORT).show();
+                else {
+                    //Toast.makeText(getApplicationContext(), "¡ Bienvenido " + usuario.getNames() + " !", Toast.LENGTH_SHORT).show();
+                    // Pasar datos a la actividad del maestro
+                    Intent intent = new Intent(this, frmMaestros.class);
+                    intent.putExtra("nombre", usuario.getNames());
+                    //intent.putExtra("variable_string", objeto.getNombre());
+                    //intent.putExtra("objeto_float", objeto.getPrecio());
+                    startActivity(intent);
+                }            }
 
         }catch (JSONException e){
             e.printStackTrace();

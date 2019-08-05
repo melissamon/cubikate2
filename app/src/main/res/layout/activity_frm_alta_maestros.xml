@@ -43,13 +43,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTituloAltaUsuario2" />
 
+    <EditText
+        android:id="@+id/txtEmail2"
+        android:layout_width="362dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="@string/txt_Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRUT2" />
+
     <Button
         android:id="@+id/btnBuscar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo"
@@ -58,86 +71,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRUT2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail2" />
 
-    <EditText
-        android:id="@+id/txtContrasenia2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:ems="10"
-        android:hint="@string/txt_Contrasenia"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
-    <EditText
+    <TextView
         android:id="@+id/txtNombre2"
         android:layout_width="362dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/colorPrimary"
         android:ems="10"
-        android:hint="@string/txt_Nombre"
-        android:inputType="textPersonName"
+        android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContrasenia2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
-    <EditText
+    <TextView
         android:id="@+id/txtApellido2"
         android:layout_width="362dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="@string/txt_Apellido"
-        android:inputType="textPersonName"
         android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombre2" />
 
-    <EditText
+    <TextView
         android:id="@+id/txtDireccion2"
         android:layout_width="362dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="@string/txt_Direccion"
-        android:inputType="textPersonName"
         android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtApellido2" />
 
-    <EditText
-        android:id="@+id/txtEmail2"
+    <TextView
+        android:id="@+id/txtTelefono2"
         android:layout_width="362dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="@string/txt_Email"
-        android:inputType="textEmailAddress"
         android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDireccion2" />
-
-    <EditText
-        android:id="@+id/txtTelefono2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:ems="10"
-        android:hint="@string/txt_Telefono"
-        android:inputType="phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail2" />
 
     <CheckBox
         android:id="@+id/ChkGasfiter"
@@ -145,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginLeft="42dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Chk_Gasfiter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono2" />
@@ -155,6 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginLeft="104dp"
+        android:layout_marginTop="8dp"
         android:text="@string/chk_Electricista"
         app:layout_constraintStart_toEndOf="@+id/ChkGasfiter"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono2" />
@@ -165,7 +151,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo"
