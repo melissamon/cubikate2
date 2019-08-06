@@ -23,6 +23,13 @@
     <string name="chk_Electricista">Electricista</string>
     <string name="title_activity_frm_prueba">frmPrueba</string>
     <string name="title_activity_main_user">MainUserActivity</string>
+    <string name="mainuser_SearchActivityTitle">Buscar Maestro</string>
+    <string name="mainuser_checkboxElectrico">Electrico</string>
+    <string name="mainuser_checkboxGasfiter">Gasfiter</string>
+    <string name="mainuser_searchButton">Buscar...</string>
+    <string name="mainuser_directionLabel">Direccion</string>
+    <string name="mainuser_searchInputTextBox">Ingrese su dirección...</string>
+    <string name="todo">TODO</string>
 
 
 </resources>

@@ -11,6 +11,7 @@ public class MainUserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_user);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -25,6 +26,7 @@ public class MainUserActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 
-}
+    }//end onCreate
+
+}//end MainUserActivity
