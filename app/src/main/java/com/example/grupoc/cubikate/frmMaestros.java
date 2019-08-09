@@ -39,7 +39,7 @@ public class frmMaestros extends AppCompatActivity {
 
     private void MarcarUbicacionMaestro() {
         //Leer del GPS del maestro
-        
+
         //Gardar en la BD la ubicacion del maestro
 
 
