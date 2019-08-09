@@ -12,6 +12,7 @@
         android:id="@+id/imageView4"
         android:layout_width="413dp"
         android:layout_height="79dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,15 +20,19 @@
         app:srcCompat="@drawable/maestro" />
 
     <TextView
-        android:id="@+id/lblBuscadorCliente"
+        android:id="@+id/lblBuscarMaestros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
-        android:text="Buscador de Clientes"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Menu Maestro"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -35,14 +40,71 @@
         android:id="@+id/lblNombreMaestro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="Nombre"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblBuscadorCliente" />
+        app:layout_constraintTop_toBottomOf="@+id/lblBuscarMaestros" />
+
+
+    <Button
+        android:id="@+id/btnMarcarUbicacionMaestro"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="btnMarcarUbicacionMaestro_click"
+        android:text="Marcar Ubicación Maestro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNombreMaestro" />
+
+    <Button
+        android:id="@+id/btnBuscarCliente"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="btnBuscarCliente_click"
+        android:text="Buscar Cliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMarcarUbicacionMaestro" />
+
+
+    <Button
+        android:id="@+id/btnEvaluarCliente"
+        android:layout_width="166dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_redondo2"
+        android:onClick="btnEvaluarCliente_click"
+        android:text="Evaluar Cliente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>

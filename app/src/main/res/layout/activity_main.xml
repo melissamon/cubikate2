@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtContrasenia" />
 
     <Button
-        android:id="@+id/btnIngresarMaestro"
+        android:id="@+id/btnMarcarUbicacionMaestro"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
@@ -108,7 +108,7 @@
 
 
     <Button
-        android:id="@+id/btnRegistrarseCliente"
+        android:id="@+id/btnEvaluarCliente"
         android:layout_width="166dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"

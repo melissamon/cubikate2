@@ -17,15 +17,19 @@
         app:srcCompat="@drawable/cliente" />
 
     <TextView
-        android:id="@+id/lblTituloAltaUsuario"
+        android:id="@+id/lblEvaluarCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="@string/lbl_TituloAltaUsuario"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -41,7 +45,7 @@
         android:inputType="textPersonName"
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTituloAltaUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/lblEvaluarCliente" />
 
     <EditText
         android:id="@+id/txtContrasenia"

@@ -4,31 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frmBuscarMaestro"
-    android:background="#202732">
-
+    tools:context=".frmEvaluarCliente">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="413dp"
+        android:id="@+id/imageView2"
+        android:layout_width="402dp"
         android:layout_height="79dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/maestro" />
+        app:srcCompat="@drawable/cliente" />
 
     <TextView
-        android:id="@+id/lblBuscarMaestros"
+        android:id="@+id/lblEvaluarCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
-        android:text="Buscador de Maestros"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Evaluar Clientes"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>
