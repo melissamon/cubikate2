@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
             }//end if
 
             else
-                
+
             {
                 usuario.setUser(jsonObject.optString("RUT_maestro"));
                 usuario.setPwd(jsonObject.getString("clave"));
