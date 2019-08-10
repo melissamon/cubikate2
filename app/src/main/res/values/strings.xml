@@ -28,8 +28,12 @@
     <string name="mainuser_checkboxGasfiter">Gasfiter</string>
     <string name="mainuser_searchButton">Buscar...</string>
     <string name="mainuser_directionLabel">Direccion</string>
+    <string name="mainuser_especialidad">Especialidad</string>
+    <string name="mainuser_descripcionRequerimiento">Necesidad</string>
     <string name="mainuser_searchInputTextBox">Ingrese su dirección...</string>
     <string name="todo">TODO</string>
-
-
+    <string-array name="mainuser_Especialidad">
+        <item>Electrico</item>
+        <item>Gasfiter</item>
+    </string-array>
 </resources>
