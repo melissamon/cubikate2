@@ -21,7 +21,6 @@ public class FragmentMaps extends SupportMapFragment implements OnMapReadyCallba
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View rootView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        //View frm = onCreateView(layoutInflater, viewGroup, bundle);
         if(getArguments() != null) {
             this.lat = getArguments().getDouble("lat");
             this.lon = getArguments().getDouble("lon");

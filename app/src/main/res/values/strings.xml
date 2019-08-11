@@ -30,6 +30,7 @@
     <string name="mainuser_directionLabel">Direccion</string>
     <string name="mainuser_searchInputTextBox">Ingrese su dirección...</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_v_maps_maestros">Map</string>
 
 
 </resources>
