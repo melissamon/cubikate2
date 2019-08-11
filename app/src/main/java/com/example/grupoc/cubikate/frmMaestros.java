@@ -46,7 +46,8 @@ public class frmMaestros extends AppCompatActivity {
     }
 
     private void BuscarCliente() {
-        Intent btnBuscarCliente_click = new Intent(this, frmBuscarCliente.class);
+        //Intent btnBuscarCliente_click = new Intent(this, frmBuscarCliente.class);
+        Intent btnBuscarCliente_click = new Intent(this, vMapsMaestros.class);
         startActivity(btnBuscarCliente_click);
     }
 
