@@ -86,7 +86,7 @@ public class vMapsMaestros extends FragmentActivity implements OnMapReadyCallbac
         // Add a marker in Sydney and move the camera
         //LatLng latLng = new LatLng(lat,lon);
         LatLng chile = new LatLng(loc.getLatitude(), loc.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(chile).title("Ciudad de Chile").snippet("en este lugar tiene que estar el nombre del electrico").icon(BitmapDescriptorFactory.fromResource(R.drawable.oil_and_gas_well)));
+        mMap.addMarker(new MarkerOptions().position(chile).title("Ciudad de Chile").snippet("en este lugar tiene que estar el nombre del electrico").icon(BitmapDescriptorFactory.fromResource(R.drawable.home)));
 
 //        LatLng mexico = new LatLng(19.4326077, -99.13320799999997);
 //        mMap.addMarker(new MarkerOptions().position(mexico).title("Ciudad de mexico").snippet("shl hlkjh lkjh lkjh lkjhlkjhljh").icon(BitmapDescriptorFactory.fromResource(R.drawable.oil_and_gas_well)));
