@@ -6,18 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".frmBuscarCliente">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="402dp"
-        android:layout_height="79dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cliente" />
-
     <TextView
-        android:id="@+id/lblEvaluarCliente"
+        android:id="@+id/tvMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -33,6 +23,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.grupoc.cubikate.FragmentMaps"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensaje" />
 
 
 

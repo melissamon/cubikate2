@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
                 //Ejecutar MainUserActivity
 
                 Intent intent = new Intent(this, MainUserActivity.class);
+                //Intent intent = new Intent(this, frmBuscarCliente.class);
                 startActivity(intent);
 
             }//end if
