@@ -48,8 +48,6 @@ public class vMapsMaestros extends FragmentActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         double lat, lon;
 
-
-
         mMap = googleMap;
 
         mMap.getUiSettings().setZoomControlsEnabled(true);

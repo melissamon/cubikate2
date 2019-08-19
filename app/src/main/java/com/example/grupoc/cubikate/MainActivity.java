@@ -110,10 +110,12 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
                     // Pasar datos a la actividad del maestro
                     Intent intent = new Intent(this, frmMaestros.class);
                     intent.putExtra("nombre", usuario.getNames());
+                    intent.putExtra("RUT",  usuario.getUser());
                     //intent.putExtra("variable_string", objeto.getNombre());
                     //intent.putExtra("objeto_float", objeto.getPrecio());
                     startActivity(intent);
-                }            }
+                }
+            }
 
         }catch (JSONException e){
             e.printStackTrace();
