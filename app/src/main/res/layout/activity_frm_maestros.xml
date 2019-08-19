@@ -60,15 +60,33 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo"
         android:onClick="btnMarcarUbicacionMaestro_click"
-        android:text="Marcar Ubicación Maestro"
+        android:text="Ubicación Maestro Disponible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblNombreMaestro" />
+
+    <Button
+        android:id="@+id/btnMaestroNoDisponible"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="btnMaestroNoDisponible_click"
+        android:text="Maestro no Disponible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMarcarUbicacionMaestro" />
 
     <Button
         android:id="@+id/btnBuscarCliente"
@@ -76,15 +94,16 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/boton_redondo"
         android:onClick="btnBuscarCliente_click"
         android:text="Buscar Cliente"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMarcarUbicacionMaestro" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMaestroNoDisponible" />
 
 
     <Button
