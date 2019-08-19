@@ -1,7 +1,7 @@
 package com.example.grupoc.cubikate;
-
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -20,11 +20,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import org.json.JSONArray;
+import org.json.JSONException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-
 import javax.net.ssl.HttpsURLConnection;
 
 public class MainUserActivity extends AppCompatActivity implements LocationListener {
@@ -77,13 +77,12 @@ public class MainUserActivity extends AppCompatActivity implements LocationListe
         });//end setOnItemSelectedListener
 
         //verificar Permisos de la aplicación
-
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             //El usuario no ha especificado los persmisos: Se solicitan
             ActivityCompat.requestPermissions(this,new String[]{
 
-                    Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION
+                    Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.INTERNET
 
             },1000); //end requestPermission()
 
@@ -108,7 +107,7 @@ public class MainUserActivity extends AppCompatActivity implements LocationListe
 
         } else {
 
-            Toast.makeText(getBaseContext(), "Error al Obtener Ubicación => Linea 80;MainUserActivity", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Error al Obtener Ubicación => Linea 80:::MainUserActivity", Toast.LENGTH_SHORT).show();
 
         }//end if-else
 
@@ -127,6 +126,7 @@ public class MainUserActivity extends AppCompatActivity implements LocationListe
                 Log.d("URL TEMPORAL:", url_temporal);
 
                 //Llamada al JSON entregando parametros del usuario
+                JSONArray jsonArray = new JSONArray();
                 getJSON(url_temporal);
 
             }//end onClick
@@ -181,7 +181,18 @@ public class MainUserActivity extends AppCompatActivity implements LocationListe
             protected void onPostExecute(String s) {
 
                 super.onPostExecute(s);
-                //Toast.makeText(this.getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+
+                //Envio el JSON hacia loadMaestrosResult para ejecutar nuevo Activity, hijo de MainUserActivity.
+                try {
+
+                    loadMaestrosResult(s);
+
+                } catch (JSONException e) {
+
+                    e.printStackTrace();
+
+                }//end try-catch
 
             }//end onPostExecute()
 
@@ -221,6 +232,28 @@ public class MainUserActivity extends AppCompatActivity implements LocationListe
         getJSON.execute();
 
     }//end method getJSON
+
+    private void loadMaestrosResult(String json) throws JSONException {
+
+        /*
+            Recibo el JSON desde el servidor con lista de Maestros Cercanos
+            Ejecuto nueva Activity ""
+
+         */
+
+        if (json != null) {
+
+            //El JSON no es NULL => Técnicamente nunca será null dado que el WebServer siempre responde con las cabeceras vacias por defecto
+            Intent intent = new Intent(this, UserActivity_frmMaestrosCercanos.class);
+            startActivity(intent);
+
+        } else {
+
+            //El JSON es NULL
+
+        }//end if-else
+
+    }//end loadMaestrosResult
 
 }//end MainUserActivity
 
