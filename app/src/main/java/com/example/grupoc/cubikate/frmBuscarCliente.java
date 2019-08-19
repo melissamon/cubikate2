@@ -10,6 +10,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,33 +41,44 @@ public class frmBuscarCliente extends AppCompatActivity {
 
     ListView listaResultado;
 
+    private String sIDmaestro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frm_buscar_cliente);
 
         listaResultado = (ListView)findViewById(R.id.lstCliente);
 
-
         rq = Volley.newRequestQueue(getApplicationContext());
 
-        iniciarSesion();
+        Bundle parametros = this.getIntent().getExtras();
 
+        if(parametros !=null) {
+            sIDmaestro = parametros.getString("IDmaestro");
+        }
+
+        iniciarSesion();
     }
 
     public void CargarListView(JSONArray ja){
 
-        ArrayList<String> lista = new ArrayList<>();
+        final ArrayList<String> lista = new ArrayList<>();
+        final ArrayList<String> lista2 = new ArrayList<>();
+        final ArrayList<String> listaLat = new ArrayList<>();
+        final ArrayList<String> listaLon = new ArrayList<>();
 
         //for(int i=0;i<ja.length();i+=4){
-        for(int i=0;i<ja.length();i+=2){
+        for(int i=0;i<ja.length();i+=4){
 
             try {
                 //lista.add(ja.getString(i)+" "+ja.getString(i+1)+" "+ja.getString(i+2)+" "+ja.getString(i+3));
-                //Toast.makeText(getApplicationContext(), ja.getString(i)+" "+ja.getString(i+1), Toast.LENGTH_LONG).show();
-                lista.add(ja.getString(i)+" "+ja.getString(i+1));
+                //lista.add(ja.getString(i)+" "+ja.getString(i+1));
+                lista2.add(ja.getString(i));
+                lista.add(ja.getString(i+1));
+                listaLat.add(ja.getString(i+2));
+                listaLon.add(ja.getString(i+3));
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -73,6 +86,27 @@ public class frmBuscarCliente extends AppCompatActivity {
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
         listaResultado.setAdapter(adaptador);
+
+        listaResultado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(frmBuscarCliente.this, frmContactarCliente.class);
+                intent.putExtra("IDcliente",lista2.get(i));
+                intent.putExtra("Nombre",lista.get(i));
+                intent.putExtra("c_latitud",listaLat.get(i));
+                intent.putExtra("c_longitud",listaLon.get(i));
+                intent.putExtra("IDmaestro",sIDmaestro);
+
+
+
+                startActivity(intent);
+
+            }
+        });
+
+
+
     }
 
 

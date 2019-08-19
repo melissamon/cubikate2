@@ -24,10 +24,26 @@ public class vMapsMaestros extends FragmentActivity implements OnMapReadyCallbac
 
     private LocationManager ubicacion;
 
+    private String sLatitud;
+    private String sLongitud;
+
+    private String c_nombre;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_v_maps_maestros);
+
+        Bundle parametros = this.getIntent().getExtras();
+
+        if(parametros !=null) {
+            c_nombre = parametros.getString("c_nombre");
+            sLatitud = parametros.getString("c_latitud");
+            sLongitud = parametros.getString("c_longitud");
+        }
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -47,6 +63,9 @@ public class vMapsMaestros extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         double lat, lon;
+
+        lat = Double.valueOf(sLatitud);
+        lon = Double.valueOf(sLongitud);
 
         mMap = googleMap;
 
@@ -83,11 +102,11 @@ public class vMapsMaestros extends FragmentActivity implements OnMapReadyCallbac
 
         // Add a marker in Sydney and move the camera
         //LatLng latLng = new LatLng(lat,lon);
-        LatLng chile = new LatLng(loc.getLatitude(), loc.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(chile).title("Ciudad de Chile").snippet("en este lugar tiene que estar el nombre del electrico").icon(BitmapDescriptorFactory.fromResource(R.drawable.home)));
+        LatLng mmaestro = new LatLng(loc.getLatitude(), loc.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(mmaestro).title("Santiago").snippet("Aquí esta usted").icon(BitmapDescriptorFactory.fromResource(R.drawable.electrico)));
 
-//        LatLng mexico = new LatLng(19.4326077, -99.13320799999997);
-//        mMap.addMarker(new MarkerOptions().position(mexico).title("Ciudad de mexico").snippet("shl hlkjh lkjh lkjh lkjhlkjhljh").icon(BitmapDescriptorFactory.fromResource(R.drawable.oil_and_gas_well)));
+        LatLng ccliente = new LatLng(lat, lon);
+        mMap.addMarker(new MarkerOptions().position(ccliente).title("Santiago").snippet(c_nombre).icon(BitmapDescriptorFactory.fromResource(R.drawable.home)));
 
 
 //        LatLng mexico2 = new LatLng(19.1950964, -100.13267250000001);
@@ -95,7 +114,8 @@ public class vMapsMaestros extends FragmentActivity implements OnMapReadyCallbac
 
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mexico,7));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chile,zoom));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mmaestro,zoom));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ccliente,zoom));
 
 
 /*

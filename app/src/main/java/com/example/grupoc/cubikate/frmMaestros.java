@@ -18,13 +18,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.GoogleMap;
-
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +37,7 @@ public class frmMaestros extends AppCompatActivity{
     private TextView etNombre;
     private String RUT;
     private String lat, lon;
+    private String IDmaestro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +48,9 @@ public class frmMaestros extends AppCompatActivity{
         if(parametros !=null){
             String nombre = parametros.getString("nombre");
             RUT = parametros.getString("RUT");
+            IDmaestro = parametros.getString("IDmaestro");
 
-            etNombre = (TextView)findViewById(R.id.lblNombreMaestro);
+            etNombre = (TextView)findViewById(R.id.lblNombreCliente);
 
             etNombre.setText("¡ Bienvenido " + nombre + " !");
         }
@@ -100,6 +99,7 @@ public class frmMaestros extends AppCompatActivity{
         }){
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros=new HashMap<String, String>();
+
                 parametros.put("RUT",RUT);
                 parametros.put("longitud",lon);
                 parametros.put("latitud",lat);
@@ -141,15 +141,14 @@ public class frmMaestros extends AppCompatActivity{
     }
 
     private void BuscarCliente() {
-        //Intent btnBuscarCliente_click = new Intent(this, frmBuscarCliente.class);
-        //Intent btnBuscarCliente_click = new Intent(this, vMapsMaestros.class);
-        Intent btnBuscarCliente_click = new Intent(this, frmBuscarCliente.class);
-        startActivity(btnBuscarCliente_click);
+        Intent intent = new Intent(this, frmBuscarCliente.class);
+        intent.putExtra("IDmaestro",IDmaestro);
+        startActivity(intent);
     }
 
     private void EvaluarCliente() {
-        Intent btnEvaluarCliente_click = new Intent(this, frmEvaluarCliente.class);
-        startActivity(btnEvaluarCliente_click);
+        Intent intent = new Intent(this, frmEvaluarCliente.class);
+        startActivity(intent);
     }
 
 }

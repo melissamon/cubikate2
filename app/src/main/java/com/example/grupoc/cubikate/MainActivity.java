@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
             else
 
             {
+                usuario.setIDmaestro(jsonObject.optString("ID_maestro"));
                 usuario.setUser(jsonObject.optString("RUT_maestro"));
                 usuario.setPwd(jsonObject.getString("clave"));
                 usuario.setNames(jsonObject.optString("names"));
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
                     Intent intent = new Intent(this, frmMaestros.class);
                     intent.putExtra("nombre", usuario.getNames());
                     intent.putExtra("RUT",  usuario.getUser());
-                    //intent.putExtra("variable_string", objeto.getNombre());
+                    intent.putExtra("IDmaestro", usuario.getIDmaestro());
                     //intent.putExtra("objeto_float", objeto.getPrecio());
                     startActivity(intent);
                 }

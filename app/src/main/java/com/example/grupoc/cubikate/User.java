@@ -1,7 +1,15 @@
 package com.example.grupoc.cubikate;
 
 public class User {
-    private String user, pwd, names, activo;
+    private String idmaestro, user, pwd, names, activo;
+
+    public String getIDmaestro() {
+        return idmaestro;
+    }
+
+    public void setIDmaestro(String idmaestro) {
+        this.idmaestro = idmaestro;
+    }
 
     public String getUser() {
         return user;
